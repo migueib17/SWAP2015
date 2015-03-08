@@ -1,0 +1,18 @@
+apache2 -v 
+
+Server version: Apache/2.2.22 (Ubuntu) 
+Server built: Jul 22 2014 14:37:02
+_____________________________________________________________________________________
+
+ps aux | grep apache
+
+root       880  0.0  0.6  34012  6992 ?        Ss   08:16   0:00 /usr/sbin/apache2 -k start
+www-data   898  0.0  0.4  34480  4648 ?        S    08:16   0:00 /usr/sbin/apache2 -k start
+www-data   899  0.0  0.4  34488  4664 ?        S    08:16   0:00 /usr/sbin/apache2 -k start
+www-data   900  0.0  0.4  34068  4436 ?        S    08:16   0:00 /usr/sbin/apache2 -k start
+www-data   901  0.0  0.4  34068  4436 ?        S    08:16   0:00 /usr/sbin/apache2 -k start
+www-data   902  0.0  0.4  34472  4648 ?        S    08:16   0:00 /usr/sbin/apache2 -k start
+www-data  1787  0.0  0.3  34052  4016 ?        S    10:29   0:00 /usr/sbin/apache2 -k start
+www-data  1788  0.0  0.3  34036  3764 ?        S    10:29   0:00 /usr/sbin/apache2 -k start
+www-data  1789  0.0  0.3  34036  3764 ?        S    10:29   0:00 /usr/sbin/apache2 -k start
+root      1806  0.0  0.0   4368   832 tty1     S+   10:38   0:00 grep --color=auto apache
