@@ -1,0 +1,19 @@
+# Preguntas test Tema 1: 
+# Miguel Fernández Fernández
+
+1. Un sitio web con problemas con la carga del sistema:
+
+    a) Una posible solución es configurar varias máquinas, dedicando una a cada servicio que se esté ofreciendo.
+    b) Un fallo en una máquina siempre afecta a todas las demás.
+    c) Una posible solución es configurar una máquina dedicándole los servicios que estamos ofreciendo.
+    d) No tienen nada que ver los problemas con el número de accesos.
+    respuesta correcta: a
+
+
+2. Un sitio web con problemas con la disponibilidad:
+
+    a) Las actualizaciones de los servicios nunca afectan al rendimiento global.
+    b) Los cambios que realicemos se quedan en el servidor de desarrollo.
+    c) Una posible solución es tener una máquina replicada.
+    d) Los retoques del código o quitar servicios son una buena solución para que nunca más aparezcan problemas.
+    respuesta correcta: c
