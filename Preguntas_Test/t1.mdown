@@ -1,5 +1,5 @@
 # Preguntas test Tema 1: 
-## Miguel Fernández Fernández
+### Miguel Fernández Fernández
 
 1. Un sitio web con problemas con la carga del sistema:
 
