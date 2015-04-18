@@ -18,7 +18,9 @@
 
 3. Vamos a configurar nginx como balanceador de carga, definimos que maquinas queremos añadir. Primero vamos a editar el archivo de configuración:
 
-    sudo nano /etc/nginx/conf.d/default.conf y el archivo se queda así:
+    sudo nano /etc/nginx/conf.d/default.conf 
+
+y el archivo se queda así:
 ------------------------------------------------------------------------------------------
 
 upstream apaches {
