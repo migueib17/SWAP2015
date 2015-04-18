@@ -1,14 +1,14 @@
 
 
-1. Instalaci—n y configuraci—n de nginx.
+1. InstalaciÃ³n y configuraciÃ³n de nginx.
 
-Lo primero que tenemos que hacer es importar la clave:
+         	Lo primero que tenemos que hacer es importar la clave:
 
-    wget http://nginx.org/keys/nginx_signing.key
-    apt-key add /tmp/nginx_signing.key
-    rm -f /tmp/nginx_signing.key
+        wget http://nginx.org/keys/nginx_signing.key
+        apt-key add /tmp/nginx_signing.key
+        rm -f /tmp/nginx_signing.key
 
-*Queda a–adido el repositorio al fichero /etc/apt/sources.list 
+*Queda aâ€“adido el repositorio al fichero /etc/apt/sources.list 
 
 
 2. Instalamos el paquete nginx.
@@ -16,12 +16,12 @@ Lo primero que tenemos que hacer es importar la clave:
     apt-get install nginx
 
 
-3. Vamos a configurar nginx como balanceador de carga, definimos que maquinas queremos a–adir. Primero vamos a editar el archivo de configuracion:
+3. Vamos a configurar nginx como balanceador de carga, definimos que maquinas queremos aâ€“adir. Primero vamos a editar el archivo de configuracion:
 
     sudo nano /etc/nginx/conf.d/default.conf
 
 
-y el archivo se queda as’:
+y el archivo se queda asâ€™:
 ------------------------------------------------------------------------------------------
 
 upstream apaches {
@@ -44,7 +44,7 @@ server{
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_http_version 1.1;
-        proxy_set_header Connection ÒÓ;
+        proxy_set_header Connection Ã’Ã“;
     }
 
 }
@@ -58,13 +58,13 @@ server{
 
 
 
-5. Instalaci—n y configuraci—n de haproxy. Instalamos el paquete con la siguiente orden:
+5. Instalaciâ€”n y configuraciâ€”n de haproxy. Instalamos el paquete con la siguiente orden:
 
     apt-get install haproxy
 
 
 
-6. Editamos el fichero /etc/haproxy/haproxy.cfg y aplicamos nuestra configuraci—n:
+6. Editamos el fichero /etc/haproxy/haproxy.cfg y aplicamos nuestra configuraciâ€”n:
 
 ---------------------------------------------------------
 global
@@ -94,7 +94,7 @@ backend servers
 
 
 
-8. Comprobamos el funcionamiento mediante la orden curl o tambiŽn podemos hacerlo desde el navegador de la m‡quina f’sica.
+8. Comprobamos el funcionamiento mediante la orden curl o tambiÅ½n podemos hacerlo desde el navegador de la mâ€¡quina fâ€™sica.
 
     curl http://192.168.1.36
 
