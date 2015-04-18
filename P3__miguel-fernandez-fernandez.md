@@ -64,6 +64,8 @@ y el archivo se queda así:
 6. Editamos el fichero /etc/haproxy/haproxy.cfg y aplicamos nuestra configuración:
 
 
+
+
      global
      
                daemon
