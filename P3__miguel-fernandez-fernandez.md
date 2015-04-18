@@ -30,8 +30,8 @@ upstream apaches {
 }
 
 server{
-    listen 80;
-    server_name balanc;
+          listen 80;
+          server_name balanc;
 
     access_log /var/log/nginx/balanc.access.log;
     error_log /var/log/nginx/balanc.error.log;
