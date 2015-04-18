@@ -24,26 +24,28 @@ y el archivo se queda así:
 
 
 upstream apaches {
-    server 192.168.1.34;
-    server 192.168.1.35;
+
+          server 192.168.1.34;
+          server 192.168.1.35;
 
 }
 
 server{
+
           listen 80;
           server_name balanc;
-
-    access_log /var/log/nginx/balanc.access.log;
-    error_log /var/log/nginx/balanc.error.log;
-    root /var/www/;
-
-    location / {
-        proxy_pass http://apaches;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_http_version 1.1;
-        proxy_set_header Connection ÒÓ;
+          
+          access_log /var/log/nginx/balanc.access.log;
+          error_log /var/log/nginx/balanc.error.log;
+          root /var/www/;
+          
+          location / {
+                    proxy_pass http://apaches;
+                    proxy_set_header Host $host;
+                    proxy_set_header X-Real-IP $remote_addr;
+                    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                    proxy_http_version 1.1;
+                    proxy_set_header Connection ÒÓ;
     }
 
 }
@@ -57,7 +59,7 @@ server{
 
 
 
-5. Instalaci—n y configuraci—n de haproxy. Instalamos el paquete con la siguiente orden:
+5. Instalación y configuración de haproxy. Instalamos el paquete con la siguiente orden:
 
     apt-get install haproxy
 
