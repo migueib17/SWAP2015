@@ -20,7 +20,6 @@
 
     sudo nano /etc/nginx/conf.d/default.conf
 
-
 y el archivo se queda así:
 ------------------------------------------------------------------------------------------
 
