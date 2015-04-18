@@ -70,17 +70,17 @@ y el archivo se queda así:
                daemon
                maxconn 256
      
-     defaults
+          defaults
                mode http
                contimeout 4000
                clitimeout 42000
                srvtimeout 43000
      
-     frontend http-in
+          frontend http-in
                bind *:80
                default_backend servers
      
-     backend servers
+          backend servers
                server 		server1 192.168.1.34:80 maxconn 32
                server 		server2 192.168.1.35:80 maxconn 32
 
