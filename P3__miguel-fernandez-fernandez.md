@@ -12,26 +12,23 @@
 
 
 2. Instalamos el paquete nginx.
-
-    apt-get install nginx
+          
+          apt-get install nginx
 
 
 3. Vamos a configurar nginx como balanceador de carga, definimos que maquinas queremos añadir. Primero vamos a editar el archivo de configuración:
 
-    sudo nano /etc/nginx/conf.d/default.conf 
+          sudo nano /etc/nginx/conf.d/default.conf 
 
 y el archivo se queda así:
 
-
-upstream apaches {
-
+     upstream apaches {
           server 192.168.1.34;
           server 192.168.1.35;
-
-}
-
-server{
-
+     }
+     
+     server{
+     
           listen 80;
           server_name balanc;
           
@@ -46,9 +43,8 @@ server{
                     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
                     proxy_http_version 1.1;
                     proxy_set_header Connection ÒÓ;
+           }
     }
-
-}
 
 
 
