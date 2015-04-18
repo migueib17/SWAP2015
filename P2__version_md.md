@@ -1,49 +1,49 @@
 
 
-0.Direcciones ip de ambas máquinas
+0.Direcciones ip de ambas m√°quinas
 
 	ifconfig:
 
-	-Máquina1:	192.168.1.50
-	-Máquina2:	192.168.1.49
+	-M√°quina1:	192.168.1.50
+	-M√°quina2:	192.168.1.49
 
 1. Crear un tar con ficheros locales en un equipo remoto.
 	
-	Ejecutamos en Máquina1 para copiar en Máquina2:
+	Ejecutamos en M√°quina1 para copiar en M√°quina2:
 
 	tar czf - ./home/migueib17 | ssh 192.168.1.49 'cat > ~/tar.tgz'
 
-*Al ejecutar este comando tuve un problema con el ssh: “conection refused port 22”.
-Solucioné el problema fácilmente actualizando ssh en las dos máquinas: sudo apt-get install ssh y puse las dos máquinas virtuales de vmware en puente.
+*Al ejecutar este comando tuve un problema con el ssh: "conection refused port 22".
+Solucion√© el problema f√°cilmente actualizando ssh en las dos m√°quinas: sudo apt-get install ssh y puse las dos m√°quinas virtuales de vmware en puente.
 
 2. Instalar la herramienta rsync
 
-	En ambas máquinas:
+	En ambas m√°quinas:
 	1. sudo su
-	2. contraseña
-	3. apt-get install rsync 	—> (ya lo tenía actualizado)
+	2. contrase√±a
+	3. apt-get install rsync 	--> (ya lo ten√≠a actualizado)
 	
-	En máquina2:
+	En m√°quina2:
 	4. rsync -avz -e ssh root@192.168.1.50:/var/www/ /var/www/
-	(clona la carpeta de la máquina1 en nuestra máquina).
+	(clona la carpeta de la m√°quina1 en nuestra m√°quina).
 
-*Al ejecutar este comando tuve un problema: "protocol version mismatch -- is your shell clean?”. Este problema se debe a que tengo el prompt modificado, entonces tuve que dejar el archivo .bashrc como venía de fábrica, para que ssh no me diera problemas.
+*Al ejecutar este comando tuve un problema: "protocol version mismatch -- is your shell clean?". Este problema se debe a que tengo el prompt modificado, entonces tuve que dejar el archivo .bashrc como ven√≠a de f√°brica, para que ssh no me diera problemas.
 
 *queda clonado el directorio
 
-3. Configuramos ssh para acceder sin contraseña
+3. Configuramos ssh para acceder sin contrase√±a
 
-	En la máquina2:
+	En la m√°quina2:
 	1. ssh-keygen -t dsa					->Generamos la clave ssh
-	2. ssh-copy-id -i .ssh/idsa.pub root@192.168.1.50	->Copiamos la clave a la máquina1
+	2. ssh-copy-id -i .ssh/idsa.pub root@192.168.1.50	->Copiamos la clave a la m√°quina1
 
-*Ahora podemos acceder a la máquina1 sin contraseña.
+*Ahora podemos acceder a la m√°quina1 sin contrase√±a.
 
 4. Programamos las tareas con crontab
 
-	En la máquina2:
+	En la m√°quina2:
 	1. Editamos el fichero /etc/crontab
-	2. Añadimos la siguiente línea: 0 *   * * *   root rsync -avz -e ssh root@192.168.1.50:/var/www/ /var/www/
+	2. A√±adimos la siguiente l√≠nea: 0 *   * * *   root rsync -avz -e ssh root@192.168.1.50:/var/www/ /var/www/
 
-*Se ejecutará la herramienta rsync para la clonación de la carpeta /var/www/ en el minuto 0 de cada hora para siempre.
+*Se ejecutar√° la herramienta rsync para la clonaci√≥n de la carpeta /var/www/ en el minuto 0 de cada hora para siempre.
 
