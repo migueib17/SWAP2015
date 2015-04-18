@@ -50,48 +50,48 @@ y el archivo se queda así:
 
 4. Comprobamos el funcionamiento:
 
-    sudo service nginx restart
-    curl http://192.168.1.36
+          sudo service nginx restart
+          curl http://192.168.1.36
 
 
 
 5. Instalación y configuración de haproxy. Instalamos el paquete con la siguiente orden:
 
-    apt-get install haproxy
+          apt-get install haproxy
 
 
 
 6. Editamos el fichero /etc/haproxy/haproxy.cfg y aplicamos nuestra configuración:
 
 
-global
-        daemon
-        maxconn 256
-
-defaults
-        mode http
-        contimeout 4000
-        clitimeout 42000
-        srvtimeout 43000
-
-frontend http-in
-        bind *:80
-        default_backend servers
-
-backend servers
-        server 		server1 192.168.1.34:80 maxconn 32
-        server 		server2 192.168.1.35:80 maxconn 32
+     global
+               daemon
+               maxconn 256
+     
+     defaults
+               mode http
+               contimeout 4000
+               clitimeout 42000
+               srvtimeout 43000
+     
+     frontend http-in
+               bind *:80
+               default_backend servers
+     
+     backend servers
+               server 		server1 192.168.1.34:80 maxconn 32
+               server 		server2 192.168.1.35:80 maxconn 32
 
 
 
 
 7. Lanzamos el servicio:
 
-    sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg
+          sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg
 
 
 
 8. Comprobamos el funcionamiento mediante la orden curl o también podemos hacerlo desde el navegador de la máquina física.
 
-    curl http://192.168.1.36
+          curl http://192.168.1.36
 
