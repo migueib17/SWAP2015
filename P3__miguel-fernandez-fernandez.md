@@ -2,7 +2,7 @@
 
 1. Instalación y configuración de nginx.
 
-         	Lo primero que tenemos que hacer es importar la clave:
+     Lo primero que tenemos que hacer es importar la clave:
 
         wget http://nginx.org/keys/nginx_signing.key
         apt-key add /tmp/nginx_signing.key
