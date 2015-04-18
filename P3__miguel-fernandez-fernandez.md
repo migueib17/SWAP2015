@@ -8,7 +8,7 @@
         apt-key add /tmp/nginx_signing.key
         rm -f /tmp/nginx_signing.key
 
-*Queda a–adido el repositorio al fichero /etc/apt/sources.list 
+*Queda añadido el repositorio al fichero /etc/apt/sources.list 
 
 
 2. Instalamos el paquete nginx.
@@ -16,12 +16,12 @@
     apt-get install nginx
 
 
-3. Vamos a configurar nginx como balanceador de carga, definimos que maquinas queremos a–adir. Primero vamos a editar el archivo de configuracion:
+3. Vamos a configurar nginx como balanceador de carga, definimos que maquinas queremos añadir. Primero vamos a editar el archivo de configuración:
 
     sudo nano /etc/nginx/conf.d/default.conf
 
 
-y el archivo se queda as’:
+y el archivo se queda así:
 ------------------------------------------------------------------------------------------
 
 upstream apaches {
