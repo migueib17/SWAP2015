@@ -21,7 +21,7 @@
     sudo nano /etc/nginx/conf.d/default.conf 
 
 y el archivo se queda así:
-------------------------------------------------------------------------------------------
+
 
 upstream apaches {
     server 192.168.1.34;
@@ -47,7 +47,7 @@ server{
     }
 
 }
-------------------------------------------------------------------------------------------
+
 
 
 4. Comprobamos el funcionamiento:
@@ -63,9 +63,9 @@ server{
 
 
 
-6. Editamos el fichero /etc/haproxy/haproxy.cfg y aplicamos nuestra configuraci—n:
+6. Editamos el fichero /etc/haproxy/haproxy.cfg y aplicamos nuestra configuración:
 
----------------------------------------------------------
+
 global
         daemon
         maxconn 256
@@ -83,7 +83,7 @@ frontend http-in
 backend servers
         server 		server1 192.168.1.34:80 maxconn 32
         server 		server2 192.168.1.35:80 maxconn 32
----------------------------------------------------------
+
 
 
 
@@ -93,7 +93,7 @@ backend servers
 
 
 
-8. Comprobamos el funcionamiento mediante la orden curl o tambiŽn podemos hacerlo desde el navegador de la m‡quina f’sica.
+8. Comprobamos el funcionamiento mediante la orden curl o también podemos hacerlo desde el navegador de la máquina física.
 
     curl http://192.168.1.36
 
