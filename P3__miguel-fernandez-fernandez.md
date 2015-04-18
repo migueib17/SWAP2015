@@ -65,6 +65,7 @@ y el archivo se queda así:
 
 
      global
+     
                daemon
                maxconn 256
      
