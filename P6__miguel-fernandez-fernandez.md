@@ -42,7 +42,7 @@ Para comprobar el estado del RAID, ejecutaremos:
 
 En el fichero /etc/fstab añadimos lo siguiente para que cuando se reinicie el sistema automáticamente se monte el RAID, y con la orden mount podemos ver si se ha montado correctamente:
 
-    .# echo "UUID=asdfghj-asdfghjk-asdfghjk-asdfghjkls /datos ext2 defaults 0 0" >> /etc/fstab
+    .# echo "UUID=xxxx-xxxx-xxxx-xxxx /datos ext2 defaults 0 0" >> /etc/fstab
 
 
 Con la siguiente orden podemos ver el estado del RAID:
